@@ -57,21 +57,18 @@ chmod +x $SCRIPTS_DIR/jmeter/start-jmeter-test.sh
 source $SCRIPTS_DIR/jmeter/start-jmeter-test.sh $JMETER_OPTIONS
 
 # Create csv file
-# cd $GITHUB_REPO_DIR/testresults
-chmod +x $GITHUB_REPO_DIR/testresults/create-summary-csv.sh
-source $GITHUB_REPO_DIR/testresults/create-summary-csv.sh -n Passthrough HTTP service -x
+cd $GITHUB_REPO_DIR/testresults
+chmod +x create-summary-csv.sh
+sudo ./create-summary-csv.sh -n Passthrough HTTP service -x
 
 # Create markdown file
 echo "y" | apt-get install python3.8
 echo "y" | apt-get install -y python3-humanize
-source python3 $GITHUB_REPO_DIR/testresults/create-summary-markdown.py --column-names "Scenario Name" "Heap Size" "Concurrent Users" "Message Size (Bytes)" "Back-end Service Delay (ms)" "Label" "# Samples" "Error Count" "Error %" "Throughput (Requests/sec)" "Average Response Time (ms)" "Average Users in the System" "Standard Deviation of Response Time (ms)" "Minimum Response Time (ms)" "75th Percentile of Response Time (ms)" "90th Percentile of Response Time (ms)" "95th Percentile of Response Time (ms)" "98th Percentile of Response Time (ms)" "99th Percentile of Response Time (ms)" "99.9th Percentile of Response Time (ms)" "Received (KB/sec)" "Sent (KB/sec)" --json-parameters parameters=/home/ubuntu/results/test-metadata.json
+sudo python3 create-summary-markdown.py --column-names "Scenario Name" "Heap Size" "Concurrent Users" "Message Size (Bytes)" "Back-end Service Delay (ms)" "Label" "# Samples" "Error Count" "Error %" "Throughput (Requests/sec)" "Average Response Time (ms)" "Average Users in the System" "Standard Deviation of Response Time (ms)" "Minimum Response Time (ms)" "75th Percentile of Response Time (ms)" "90th Percentile of Response Time (ms)" "95th Percentile of Response Time (ms)" "98th Percentile of Response Time (ms)" "99th Percentile of Response Time (ms)" "99.9th Percentile of Response Time (ms)" "Received (KB/sec)" "Sent (KB/sec)" --json-parameters parameters=/home/ubuntu/results/test-metadata.json
 
 # Push results to the git repo
 echo $GIT_USERNAME
 echo $GIT_PASSWORD
-export $GIT_USERNAME
-export $GIT_PASSWORD
-cd $GITHUB_REPO_DIR
 git add summary.md
 git add summary.csv
 git commit -m "Update performance results"
