@@ -5,7 +5,6 @@ During each release, we execute various automated performance test scenarios and
 | Test Scenarios | Description |
 | --- | --- |
 | Passthrough HTTP service (h1c -> h1c) | An HTTP Service, which forwards all requests to an HTTP back-end service. |
-| JSON to XML transformation HTTP service | An HTTP Service, which transforms JSON requests to XML and then forwards all requests to an HTTP back-end service. |
 
 Our test client is [Apache JMeter](https://jmeter.apache.org/index.html). We test each scenario for a fixed duration of
 time. We split the test results into warmup and measurement parts and use the measurement part to compute the
@@ -55,5 +54,4 @@ The following is the summary of performance test results collected for the measu
 
 |  Scenario Name | Heap Size | Concurrent Users | Message Size (Bytes) | Back-end Service Delay (ms) | Label | # Samples | Error Count | Error % | Throughput (Requests/sec) | Average Response Time (ms) | Average Users in the System | Standard Deviation of Response Time (ms) | Minimum Response Time (ms) | 75th Percentile of Response Time (ms) | 90th Percentile of Response Time (ms) | 95th Percentile of Response Time (ms) | 98th Percentile of Response Time (ms) | 99th Percentile of Response Time (ms) | 99.9th Percentile of Response Time (ms) | Received (KB/sec) | Sent (KB/sec) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-|  Passthrough HTTP service (h1c -> h1c) | 2G_heap | 100_users | 50B | No | HTTP Request | 3817949 | 0 | 0 | 6363.93 | 15.66 | 99 | 3.8 | 1 | 18 | 21 | 23 | 25 | 26 | 29 | 1100.01 | 1441.83 |
-|  JSON to XML transformation HTTP service | 2G_heap | 100_users | 50B | No | HTTP Request | 6000 | 6000 | 100 | 9.98 | 10016 | 99 | 0 | 10000 | 10047 | 10047 | 10047 | 10047 | 10047 | 10047 | 26.01 | 0 |
+|  Passthrough HTTP service (h1c -> h1c) | 2G_heap | 100_users | 50B | No | HTTP Request | 3685210 | 0 | 0 | 6142.8 | 16.23 | 99 | 3.88 | 1 | 19 | 22 | 24 | 26 | 27 | 30 | 1061.79 | 1385.73 |
