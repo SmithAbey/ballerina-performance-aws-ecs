@@ -46,7 +46,6 @@ source $SCRIPTS_DIR/setup/install-tools.sh
 source $SCRIPTS_DIR/docker/install-docker.sh
 source $SCRIPTS_DIR/java/install-java.sh
 source $SCRIPTS_DIR/ballerina/install-ballerina.sh
-bal -v
 source $SCRIPTS_DIR/jmeter/install-jmeter.sh
 
 # Build components package
