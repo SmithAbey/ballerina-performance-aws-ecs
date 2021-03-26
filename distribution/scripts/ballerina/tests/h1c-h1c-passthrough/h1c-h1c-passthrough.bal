@@ -34,11 +34,4 @@ service /passthrough on new http:Listener(9090) {
             return internalServerError;
         }
     }
-
-    resource function get healthcheck() returns http:Ok {
-        http:Ok ok = {
-            body: "Health check passed!"
-        };
-        return ok;
-    }
 }
