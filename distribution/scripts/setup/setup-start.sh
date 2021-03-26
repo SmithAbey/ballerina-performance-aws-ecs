@@ -34,7 +34,6 @@ export JMETER_DIR="$HOME_DIR/jmeter"
 export NETTY_DOCKER_DIR="$HOME_DIR/docker-images/netty"
 export BALLERINA_DOCKER_DIR="$HOME_DIR/docker-images/ballerina"
 export JMETER_DOCKER_DIR="$HOME_DIR/docker-images/jmeter"
-bal -v
 export AWS_ECR_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com"
 
 mkdir $DOWNLOADS_DIR
@@ -47,6 +46,7 @@ source $SCRIPTS_DIR/setup/install-tools.sh
 source $SCRIPTS_DIR/docker/install-docker.sh
 source $SCRIPTS_DIR/java/install-java.sh
 source $SCRIPTS_DIR/ballerina/install-ballerina.sh
+bal -v
 source $SCRIPTS_DIR/jmeter/install-jmeter.sh
 
 # Build components package
