@@ -60,5 +60,5 @@ if [[ -z $test_name ]]; then
 fi
 echo $b7a.netty
 export b7a.netty
-java -jar $test_name.jar --b7a.netty=$netty_host
-# java -jar $test_name.jar
+# java -jar $test_name.jar --b7a.netty=$netty_host
+java -jar $test_name.jar
