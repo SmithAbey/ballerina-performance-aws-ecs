@@ -434,7 +434,6 @@ function test_scenarios() {
                     record_scenario_duration $scenario_name $current_execution_duration
                 done
             done
-            exit 1
             aws cloudformation delete-stack --stack-name ecs-stack
             aws cloudformation wait stack-delete-complete --stack-name ecs-stack
         done
