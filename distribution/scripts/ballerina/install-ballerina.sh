@@ -28,6 +28,6 @@ echo "Installing Ballerina..."
 mkdir $BALLERINA_DIR
 wget https://dist.ballerina.io/downloads/$BALLERINA_VERSION/ballerina-linux-installer-x64-$BALLERINA_VERSION.deb
 sudo dpkg -i ballerina-linux-installer-x64-$BALLERINA_VERSION.deb 
-# sleep 5
-# echo "Ballerina version:"
-# bal -v
+sleep 10
+echo "Ballerina version:"
+bal -v
