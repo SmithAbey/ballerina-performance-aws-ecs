@@ -29,4 +29,4 @@ mkdir $BALLERINA_DIR
 wget https://dist.ballerina.io/downloads/$BALLERINA_VERSION/ballerina-linux-installer-x64-$BALLERINA_VERSION.deb
 sudo dpkg -i ballerina-linux-installer-x64-$BALLERINA_VERSION.deb 
 echo "Ballerina version:"
-ballerina -v
+bal -v
