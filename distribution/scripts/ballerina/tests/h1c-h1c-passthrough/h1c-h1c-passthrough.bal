@@ -18,7 +18,7 @@ import ballerina/http;
 import ballerina/log;
 import ballerina/os;
 
-http:Client nettyEP = checkpanic new("http://" + os:getEnv("b7a.netty")+ ":8688");
+http:Client nettyEP = checkpanic new("http://" + os:getEnv("netty")+ ":8688");
 
 service /passthrough on new http:Listener(9090) {
     
