@@ -58,6 +58,6 @@ if [[ -z $test_name ]]; then
     echo "Please provide the name of the test."
     exit 1
 fi
-export b7a.netty=$netty_host
-# java -jar $test_name.jar --b7a.netty=$netty_host
-java -jar $test_name.jar
+# export b7a.netty=$netty_host
+java -jar $test_name.jar --b7a.netty=$netty_host
+# java -jar $test_name.jar
