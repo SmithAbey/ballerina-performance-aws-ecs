@@ -349,7 +349,7 @@ function test_scenarios() {
 
             taskid=$(aws ecs list-tasks --cluster ballerina-performance-test --service-name ballerina-service --query ["taskArns"][0][0] --output text)
             hostname=$(aws ecs describe-tasks --cluster ballerina-performance-test --tasks $taskid --query 'tasks[*].attachments[].details[].value | [4]' --output text)
-        
+            echo $NETTY_HOST
             if [[ -z $hostname ]]; then
                 echo "Did not assign any ipv4 address for ballerina proxy."
                 exit 1
