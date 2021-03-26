@@ -34,7 +34,7 @@ export JMETER_DIR="$HOME_DIR/jmeter"
 export NETTY_DOCKER_DIR="$HOME_DIR/docker-images/netty"
 export BALLERINA_DOCKER_DIR="$HOME_DIR/docker-images/ballerina"
 export JMETER_DOCKER_DIR="$HOME_DIR/docker-images/jmeter"
-
+bal -v
 export AWS_ECR_URL="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com"
 
 mkdir $DOWNLOADS_DIR
