@@ -62,10 +62,10 @@ touch Dockerfile
 echo "FROM alpine:3.12.0" >> Dockerfile
 echo "USER root" >> Dockerfile
 echo "RUN apk add openjdk11=11.0.9_p11-r0" >> Dockerfile
-echo "ENV NETTY_HOST \"\"" >> Dockerfile
+echo "ENV NETTY_HOST" >> Dockerfile
 echo "COPY $test_name.jar ." >> Dockerfile
 echo "COPY start-ballerina-test.sh ." >> Dockerfile
-echo "ENTRYPOINT ./start-ballerina-test.sh -n \$NETTY_HOST -t $test_name" >> Dockerfile
+echo "ENTRYPOINT ./start-ballerina-test.sh -n $NETTY_HOST -t $test_name" >> Dockerfile
 
 cd $HOME_DIR
 # Push image to ECR
