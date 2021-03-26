@@ -68,6 +68,6 @@ echo "COPY start-ballerina-test.sh ." >> Dockerfile
 echo "ENTRYPOINT ./start-ballerina-test.sh -n \$NETTY_HOST -t $test_name" >> Dockerfile
 
 cd $HOME_DIR
-
+echo $NETTY_HOST
 # Push image to ECR
 $SCRIPTS_DIR/docker/push-docker-image.sh -d $BALLERINA_DOCKER_DIR -i $test_name
