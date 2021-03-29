@@ -1,5 +1,7 @@
 # Ballerina Performance Test Results
-
+{{$BALLERINA_MEMORY}}
+{{$BALLERINA_CPU}}
+{{$BALLERINA_VERSION}}
 During each release, we execute various automated performance test scenarios and publish the results.
 
 | Test Scenarios | Description |
