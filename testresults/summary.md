@@ -1,5 +1,11 @@
 # Ballerina Performance Test Results
 
+
+|  |
+| 8192 |
+| 4096 |
+
+
 During each release, we execute various automated performance test scenarios and publish the results.
 
 | Test Scenarios | Description |
@@ -29,8 +35,8 @@ The following are the test parameters.
 | --- | --- | --- |
 | Scenario Name | The name of the test scenario. | Refer to the above table. |
 | Heap Size | The amount of memory allocated to the application | 2G |
-| Concurrent Users | The number of users accessing the application at the same time. | 100 |
-| Message Size (Bytes) | The request payload size in Bytes. |  |
+| Concurrent Users | The number of users accessing the application at the same time. | 50 |
+| Message Size (Bytes) | The request payload size in Bytes. | 50 |
 | Back-end Delay (ms) | The delay added by the back-end service. |  |
 
 The duration of each test is **900 seconds**. The warm-up period is **300 seconds**.
@@ -54,4 +60,4 @@ The following is the summary of performance test results collected for the measu
 
 |  Scenario Name | Heap Size | Concurrent Users | Message Size (Bytes) | Back-end Service Delay (ms) | Label | # Samples | Error Count | Error % | Throughput (Requests/sec) | Average Response Time (ms) | Average Users in the System | Standard Deviation of Response Time (ms) | Minimum Response Time (ms) | 75th Percentile of Response Time (ms) | 90th Percentile of Response Time (ms) | 95th Percentile of Response Time (ms) | 98th Percentile of Response Time (ms) | 99th Percentile of Response Time (ms) | 99.9th Percentile of Response Time (ms) | Received (KB/sec) | Sent (KB/sec) |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-|  Passthrough HTTP service (h1c -> h1c) | 2G_heap | 100_users | 50B | No | HTTP Request | 42334 | 42334 | 100 | 70.04 | 1424.89 | 99 | 3491.19 | 0 | 11 | 10047 | 10047 | 10047 | 10047 | 10047 | 184.79 | 0 |
+|  Passthrough HTTP service (h1c -> h1c) | 2G_heap | 50_users | 50B | No | HTTP Request | 5691226 | 0 | 0 | 9485.98 | 5.24 | 49 | 1.37 | 0 | 6 | 7 | 8 | 9 | 10 | 12 | 1639.67 | 2149.17 |
