@@ -1,7 +1,7 @@
 # Ballerina Performance Test Results
 
 
-| {{ parameters.version }} |
+{{ parameters.bal_version }}
 | {{ parameters.memory }} |
 | {{ parameters.cpu }} |
 
