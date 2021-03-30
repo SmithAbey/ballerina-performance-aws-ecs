@@ -259,9 +259,6 @@ function initialize_test() {
             --arg display_name "${scenario[display_name]}" \
             --arg description "${scenario[description]}" \
             --arg jmx "${scenario[jmx]}" \
-            --arg bal_version "${BALLERINA_VERSION}" \
-            --arg memory "${BALLERINA_MEMORY}" \
-            --arg cpu "${BALLERINA_CPU}" \
             '. | .["name"]=$name | .["display_name"]=$display_name | .["description"]=$description | .["jmx"]=$jmx')
     done
 
