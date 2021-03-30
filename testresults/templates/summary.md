@@ -1,10 +1,10 @@
 # Ballerina Performance Test Results
 {%- for test_scenario in parameters.test_scenarios %}
-{{test_scenario.BALLERINA_VERSION}}
+|{{test_scenario.BALLERINA_VERSION}}|
 {%- endfor %}
 {%- for test_scenario in parameters.test_scenarios %}
-{{parameters.BALLERINA_MEMORY}}
-{{parameters.BALLERINA_CPU}}
+|{{parameters.BALLERINA_MEMORY}}|
+|{{parameters.BALLERINA_CPU}}|
 {%- endfor %}
 During each release, we execute various automated performance test scenarios and publish the results.
 
