@@ -396,14 +396,13 @@ function test_scenarios() {
                     test_start_timestamp=$(date +%s)
                     echo "Start timestamp: $test_start_timestamp"
                     # Run JMeter in background
-                    var_path1=`pwd`
                     cd /home/ubuntu/jmeter/apache-jmeter-5.3/bin
                     sh $jmeter_command &
                     local jmeter_pid="$!"
                     if ! wait $jmeter_pid; then
                         echo "WARNING: JMeter execution failed."
                     fi
-                    cd $var_path1
+                    cd $HOME_DIR
                     
                     # End timestamp
                     test_end_timestamp="$(date +%s)"
