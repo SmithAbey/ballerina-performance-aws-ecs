@@ -262,18 +262,24 @@ function initialize_test() {
             --arg bal_version "${BALLERINA_VERSION}" \
             --arg memory "${BALLERINA_MEMORY}" \
             --arg cpu "${BALLERINA_CPU}" \
-            '. | .["name"]=$name | .["display_name"]=$display_name | .["description"]=$description | .["jmx"]=$jmx | .["bal_version"]=$bal_version | .["memory"]=$memory | .["cpu"]=$cpu')
+            '. | .["name"]=$name | .["display_name"]=$display_name | .["description"]=$description | .["jmx"]=$jmx')
     done
 
     local test_parameters_json='.'
     test_parameters_json+=' | .["test_duration"]=$test_duration'
+    test_parameters_json+=' | .["bal_version"]=$bal_version'
+    test_parameters_json+=' | .["memory"]=$memory'
+    test_parameters_json+=' | .["cpu"]=$cpu'
     test_parameters_json+=' | .["warmup_time"]=$warmup_time'
     test_parameters_json+=' | .["jmeter_client_heap_size"]=$jmeter_client_heap_size'
     test_parameters_json+=' | .["netty_service_heap_size"]=$netty_service_heap_size'
     test_parameters_json+=' | .["test_scenarios"]=$test_scenarios'
-    test_parameters_json+=' | .["heap_sizes"]=$heap_sizes | .["concurrent_users"]=$concurrent_users'
+    test_parameters_json+=' | .["heap_sizes"]=$heap_sizes | .["concurrent_users"]=$concurrent_users | .["message_sizes"]=$message_sizes'
     jq -n \
         --arg test_duration "$test_duration" \
+        --arg bal_version "$BALLERINA_VERSION" \
+        --arg memory "$BALLERINA_MEMORY" \
+        --arg cpu "$BALLERINA_CPU" \
         --arg warmup_time "$warmup_time" \
         --arg jmeter_client_heap_size "$jmeter_client_heap_size" \
         --arg netty_service_heap_size "$netty_service_heap_size" \
