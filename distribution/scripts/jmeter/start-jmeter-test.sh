@@ -259,7 +259,10 @@ function initialize_test() {
             --arg display_name "${scenario[display_name]}" \
             --arg description "${scenario[description]}" \
             --arg jmx "${scenario[jmx]}" \
-            '. | .["name"]=$name | .["display_name"]=$display_name | .["description"]=$description | .["jmx"]=$jmx')
+            --arg bal_version "${BALLERINA_VERSION}" \
+            --arg memory "${BALLERINA_MEMORY}" \
+            --arg cpu "${BALLERINA_CPU}" \
+            '. | .["name"]=$name | .["display_name"]=$display_name | .["description"]=$description | .["jmx"]=$jmx | .["bal_version"]=$bal_version | .["memory"]=$memory | .["cpu"]=$cpu')
     done
 
     local test_parameters_json='.'
